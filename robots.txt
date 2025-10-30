@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fernandomauricio805-boop.github.io/viver-com-tdh/sitemap.xml

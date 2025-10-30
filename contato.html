@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato — Como Viver com TDH</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2b1e6b6dc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="hero">
+    <h1>Entre em Contato</h1>
+    <p>Envie-nos uma mensagem, sugestão ou história sobre sua experiência com o TDH.</p>
+  </header>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png" alt="Logo TDH">
+        <span>Como Viver com TDH</span>
+      </a>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Fale Conosco</h2>
+      <form action="mailto:fernandomauricio805@gmail.com" method="post" enctype="text/plain">
+        <label>Nome:</label><br>
+        <input type="text" name="nome" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Mensagem:</label><br>
+        <textarea name="mensagem" rows="5" required></textarea><br><br>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Como Viver com TDH — Informação e Apoio.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

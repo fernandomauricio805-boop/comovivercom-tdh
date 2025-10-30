@@ -1,0 +1,22 @@
+<!-- assets/logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Como viver com TDH</title>
+  <desc id="logoDesc">Logotipo Como viver com TDH — ícone azul e texto branco</desc>
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0" stop-color="#2e89d2"/>
+      <stop offset="1" stop-color="#1e73be"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(6,6)">
+    <rect width="48" height="48" rx="10" fill="url(#lg)"/>
+    <circle cx="24" cy="18" r="5" fill="#fff"/>
+    <path d="M12 36c2-4 6-8 14-8s12 4 14 8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(70,38)" font-family="Poppins, sans-serif" font-weight="700">
+    <text x="0" y="-6" fill="#ffffff" font-size="18">Como viver com</text>
+    <text x="0" y="16" fill="#ffffff" font-size="20">TDH</text>
+  </g>
+</svg>

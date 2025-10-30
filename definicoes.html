@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Definições — Como viver com TDH</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div style="padding:12px 18px"><a href="index.html" style="text-decoration:none;color:var(--text)">← Voltar ao site</a></div>
+
+<main style="max-width:900px;margin:36px auto;padding:0 18px 60px">
+  <article class="card">
+    <h1>Definições</h1>
+
+    <label>Modo do tema</label>
+    <div style="display:flex;gap:12px;margin-bottom:12px">
+      <label><input type="radio" name="theme" value="dark"> Escuro (padrão)</label>
+      <label><input type="radio" name="theme" value="light"> Claro</label>
+      <label><input type="radio" name="theme" value="system"> Seguir sistema</label>
+    </div>
+
+    <label>Tamanho da letra</label>
+    <input id="fontRange" type="range" min="14" max="20" value="16">
+
+    <div style="margin-top:12px">
+      <button id="saveBtn" class="cta">Guardar definições</button>
+    </div>
+  </article>
+</main>
+
+<script>
+const themeRadios = document.querySelectorAll('input[name="theme"]');
+const fontRange = document.getElementById('fontRange');
+const saveBtn = document.getElementById('saveBtn');
+
+function applySettings(settings){
+  if(settings.theme==='light'){
+    document.documentElement.style.setProperty('--bg','#f5f8fb');
+    document.documentElement.style.setProperty('--surface','#fff');
+    document.documentElement.style.setProperty('--card','#fff');
+    document.documentElement.style.setProperty('--text','#0f1724');
+  } else if(settings.theme==='dark'){
+    document.documentElement.style.setProperty('--bg','#0b1220');
+    document.documentElement.style.setProperty('--surface','#0f1724');
+    document.documentElement.style.setProperty('--card','#111827');
+    document.documentElement.style.setProperty('--text','#e6eef8');
+  } else {
+    document.documentElement.style.removeProperty('--bg');
+    document.documentElement.style.removeProperty('--surface');
+    document.documentElement.style.removeProperty('--card');
+    document.documentElement.style.removeProperty('--text');
+  }
+  document.documentElement.style.fontSize = settings.fontSize + 'px';
+}
+
+function load(){
+  const saved = JSON.parse(localStorage.getItem('vctdh_settings')||'{}');
+  if(saved.theme) themeRadios.forEach(r=>r.checked = (r.value === saved.theme));
+  else document.querySelector('input[value="dark"]').checked = true;
+  fontRange.value = saved.fontSize || 16;
+  applySettings({theme: saved.theme || 'dark', fontSize: saved.fontSize || 16});
+}
+
+saveBtn.addEventListener('click', ()=>{
+  const theme = document.querySelector('input[name="theme"]:checked').value;
+  const fontSize = Number(fontRange.value);
+  const settings = {theme, fontSize};
+  localStorage.setItem('vctdh_settings', JSON.stringify(settings));
+  applySettings(settings);
+  saveBtn.textContent = 'Guardado ✓';
+  setTimeout(()=> saveBtn.textContent = 'Guardar definições', 1200);
+});
+
+window.addEventListener('DOMContentLoaded', load);
+</script>
+</body>
+</html>
