@@ -1,72 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Como Viver com TDH — Dicas, Apoio e Informação</title>
 
   <!-- SEO -->
-  <meta name="description" content="Blogue educativo sobre o TDH — sintomas, causas, prevenção e convivência. Descubra dicas práticas para lidar com o Transtorno de Défice de Atenção e Hiperatividade.">
+  <meta name="description" content="Blog educativo sobre o TDH — sintomas, causas, prevenção e convivência. Descubra dicas práticas para lidar com o Transtorno de Défice de Atenção e Hiperatividade.">
   <meta name="keywords" content="TDH, TDAH, atenção, hiperatividade, convivência, tratamento, saúde mental, crianças TDH, foco, comportamento">
   <meta name="author" content="Fernando Maurício">
   <meta name="theme-color" content="#003366">
 
   <!-- Google Verification -->
-  <meta name="google-site-verification" content="google56c713c1a9a05f0a.html" />
+  <meta name="google-site-verification" content="google56c713c1a9a05f0a.html"/>
 
-  <!-- Estilo -->
   <style>
     :root {
-      --primary: #007bff;
-      --bg-dark: #0d1117;
-      --text-light: #f5f5f5;
-      --text-muted: #ccc;
-      --accent: #00b4d8;
-      --max-width: 1200px;
+      --primario: #007bff;
+      --bg-escuro: #0d1117;
+      --texto-claro: #f5f5f5;
+      --texto-suave: #ccc;
+      --sotaque: #00b4d8;
+      --largura-max: 1200px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+      background-color: var(--bg-escuro);
+      color: var(--texto-claro);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
+    /* CABEÇALHO */
     header {
-      background-color: #002244;
-      padding: 1.5em 0;
+      background: linear-gradient(rgba(0,0,50,0.7), rgba(0,0,70,0.7)),
+                  url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 2em 0;
+      color: var(--texto-claro);
       text-align: center;
-      color: var(--text-light);
     }
 
     header h1 {
-      font-size: 2rem;
-      color: var(--accent);
+      font-size: 2.5rem;
+      color: var(--sotaque);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: brilho 3s infinite alternate;
+    }
+
+    @keyframes brilho {
+      0% { text-shadow: 0 0 5px #00b4d8; }
+      100% { text-shadow: 0 0 20px #00b4d8; }
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     nav a {
-      color: var(--text-light);
-      margin: 0 10px;
+      color: var(--texto-claro);
+      margin: 0 12px;
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--sotaque);
       text-decoration: underline;
+    }
+
+    /* 🔍 Barra de Pesquisa */
+    .search-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-container input[type="text"] {
+      padding: 8px 12px;
+      width: 220px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      background-color: #f1f1f1;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .search-container button {
+      background-color: var(--sotaque);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-container button:hover {
+      background-color: #0096c7;
     }
 
     .hero {
       background: linear-gradient(to right, rgba(0, 0, 40, 0.8), rgba(0, 0, 70, 0.7)),
-                  url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      color: var(--text-light);
+                  url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--texto-claro);
       padding: 100px 20px;
       text-align: center;
     }
@@ -78,7 +126,7 @@
 
     .container {
       width: 90%;
-      max-width: var(--max-width);
+      max-width: var(--largura-max);
       margin: 40px auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -92,7 +140,9 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover { transform: translateY(-5px); }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
     .card img {
       width: 100%;
@@ -105,17 +155,17 @@
     }
 
     .card-content h3 {
-      color: var(--accent);
+      color: var(--sotaque);
       margin-bottom: 10px;
     }
 
     .card-content p {
-      color: var(--text-muted);
+      color: var(--texto-suave);
     }
 
     footer {
       background: #001f3f;
-      color: var(--text-light);
+      color: var(--texto-claro);
       padding: 30px 0;
       text-align: center;
       margin-top: 40px;
@@ -126,18 +176,18 @@
     }
 
     .social-icons a {
-      color: var(--accent);
+      color: var(--sotaque);
       margin: 0 8px;
       font-size: 1.2em;
       text-decoration: none;
     }
 
     .social-icons a:hover {
-      color: var(--text-light);
+      color: var(--texto-claro);
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 1.6rem; }
+      header h1 { font-size: 1.8rem; }
       .hero h2 { font-size: 2rem; }
     }
   </style>
@@ -152,6 +202,12 @@
       <a href="sobre.html">Sobre</a>
       <a href="contato.html">Contato</a>
     </nav>
+
+    <!-- 🔍 Barra de Pesquisa -->
+    <div class="search-container">
+      <input type="text" placeholder="Pesquisar no site...">
+      <button>Buscar</button>
+    </div>
   </header>
 
   <section class="hero">
@@ -163,23 +219,23 @@
     <div class="card">
       <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Criança concentrada com TDH">
       <div class="card-content">
-        <h3><a href="artigo1.html" style="color: var(--accent); text-decoration:none;">O que é o TDH?</a></h3>
-        <p>Entenda o que é o Transtorno de Défice de Atenção e Hiperatividade, como se manifesta e quais os seus principais sintomas.</p>
+        <h3><a href="artigo1.html" style="color: var(--sotaque); text-decoration:none;">O que é o TDH?</a></h3>
+        <p>Entenda o que é o Transtorno de Déficit de Atenção e Hiperatividade, como se manifesta e quais seus principais sintomas.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1507209696998-3c532be9b2b1?auto=format&fit=crop&w=800&q=80" alt="Criança estudando com ajuda dos pais">
       <div class="card-content">
-        <h3><a href="artigo2.html" style="color: var(--accent); text-decoration:none;">Como Conviver com o TDH</a></h3>
+        <h3><a href="artigo2.html" style="color: var(--sotaque); text-decoration:none;">Como Conviver com o TDH</a></h3>
         <p>Dicas de convivência para famílias, professores e amigos. A empatia e o apoio são fundamentais no dia a dia.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9c2?auto=format&fit=crop&w=800&q=80" alt="Psicóloga atendendo adolescente com TDH">
+      <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9c2?auto=format&fit=crop&w=800&q=80" alt="Psicóloga atende adolescente com TDH">
       <div class="card-content">
-        <h3><a href="artigo3.html" style="color: var(--accent); text-decoration:none;">Tratamentos e Estratégias</a></h3>
+        <h3><a href="artigo3.html" style="color: var(--sotaque); text-decoration:none;">Tratamentos e Estratégias</a></h3>
         <p>Conheça os métodos mais eficazes de tratamento e acompanhamento para o TDH — terapias, rotina e medicamentos.</p>
       </div>
     </div>
